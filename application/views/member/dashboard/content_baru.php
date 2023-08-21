@@ -1,7 +1,7 @@
 <div class="page-breadcrumb">
     <div class="row">
         <div class="col-12 d-flex no-block align-items-center">
-            <h4 class="page-title">Selamat Datang</h4>
+            <h4 class="page-title">Dashboard</h4>
             <div class="ml-auto text-right">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
@@ -35,7 +35,7 @@
                         <!-- isi disini -->
                         <div class="col-lg-12" >
                             <div class="alert alert-primary" role="alert">
-                                IMPLEMENTASI ALGORITMA K-MEANS CLUSTERING ANALYSIS PADA PENYEBARAN PENYAKIT MENULAR MANUSIA COVID-19.
+                                IMPLEMENTASI ALGORITMA K-MEANS CLUSTERING ANALYSIS PESERTA DIDIK BARU MTs ISLAMIYYAH BANAT.
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
@@ -48,8 +48,12 @@
                                 <div class="col-md-6">
                                     <form action="<?= site_url('home') ?>" method="GET">
                                         <div class="input-group mb-3">
-                                            <input type="date" name="date" class="form-control" 
-                                            value="<?= $tanggal == null ? '' : $tanggal ?>">
+                                        <select name="tahun" id="tahun" class="form-control" required>
+                                            <option value="">Pilih Tahun</option>
+                                            <?php foreach($tahun as $item) : ?>
+                                            <option value="<?= $item['tahun'] ?>"><?= $item['tahun'] ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
                                             <div class="input-group-append">
                                                 <button class="btn btn-outline-primary" type="submit">Cari</button>
                                             </div>
@@ -94,7 +98,7 @@
             data: {
             labels: ["Tinggi", "Sedang", "Rendah"],
             datasets: [{
-                label: "Jumlah Siswa",
+                label: "Jumlah Peserta Didik Baru",
                 backgroundColor: ["#ff4747", "#ffc933", "#4cff42"],
                 data: [tinggi,sedang,rendah],
                 metadata: {
@@ -107,7 +111,7 @@
             options: {
                 title: {
                     display: true,
-                    text: 'Jumlah Peserta Didik Baru'
+                    text: 'Jumlah Peserta Didik Baru di MA'
                 },
                 tooltips: {
                     callbacks: {
@@ -119,28 +123,28 @@
                             var index = tooltipItem.index
                             var currentValue = dataset.data[index]
                             if(index == 0) {
-                                var provinces = "<h4>Kecamatan dengan Pendaftar Tinggi</h4>"
+                                var provinces = "<h4>Provinsi dengan Kasus Tinggi</h4>"
                                 provinces += "<ul>"
                                 for (var key in last_object.c1) {
-                                    var province = last_object.c1[key].data_province.province_name;
+                                    var province = last_object.c1[key].kecamatan;
                                     // console.log(province)
                                     provinces += "<li>" + province + "</li>"
                                 }
                                 provinces += "</ul>"
                             } else if(index == 1) {
-                                var provinces = "<h4>Kecamatan dengan Pendaftar Sedang</h4>"
+                                var provinces = "<h4>Provinsi dengan Kasus Sedang</h4>"
                                 provinces += "<ul>"
                                 for (var key in last_object.c2) {
-                                    var province = last_object.c2[key].data_province.province_name;
+                                    var province = last_object.c2[key].kecamatan;
                                     // console.log(province)
                                     provinces += "<li>" + province + "</li>"
                                 }
                                 provinces += "</ul>"
                             } else {
-                                var provinces = "<h4>Kecamatan dengan Pendaftar Rendah</h4>"
+                                var provinces = "<h4>Provinsi dengan Kasus Rendah</h4>"
                                 provinces += "<ul>"
                                 for (var key in last_object.c3) {
-                                    var province = last_object.c3[key].data_province.province_name;
+                                    var province = last_object.c3[key].kecamatan;
                                     // console.log(province)
                                     provinces += "<li>" + province + "</li>"
                                 }

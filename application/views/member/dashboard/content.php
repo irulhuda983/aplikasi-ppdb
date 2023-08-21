@@ -90,7 +90,6 @@
     $(document).ready(function(){
         var last_iteration = '<?= json_encode($last_iteration)?>'
         var last_object = JSON.parse(last_iteration)
-        console.log(last_object)
         var tinggi = last_object.c1.length
         var sedang = last_object.c2.length
         var rendah = last_object.c3.length
