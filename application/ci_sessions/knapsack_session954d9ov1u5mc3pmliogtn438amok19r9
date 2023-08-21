@@ -1,0 +1,8 @@
+__ci_last_regenerate|i:1692658137;loginData|a:4:{s:6:"UserID";s:1:"4";s:8:"Username";s:4:"test";s:12:"project_name";s:28:"CLUSTERING ANALYSIS COVID 19";s:9:"copyright";s:11:"&copy; 2020";}msgbox|s:377:"<div class="alert alert-block alert-success">
+                        <button type="button" class="close" data-dismiss="alert">
+                                <i class="ace-icon fa fa-times"></i>
+                        </button>
+
+                        <!--<i class="ace-icon fa fa-check green"></i>-->
+                        Berhasil update data
+                    </div>";__ci_vars|a:1:{s:6:"msgbox";s:3:"old";}
