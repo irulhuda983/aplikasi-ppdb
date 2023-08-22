@@ -151,7 +151,7 @@
           <div class="modal-body">
             <div class="form-group">
               <label for="kecamatan">Kecamatan</label>
-              <select class="form-control" id="exampleFormControlSelect1">
+              <select name="kecamatan" class="form-control" id="exampleFormControlSelect1">
                 <option>Pilih Kecamatan</option>
                 <?php foreach($kecamatan as $kec) : ?>
                 <option value="<?= $kec['id'] ?>"><?= $kec['nama'] ?></option>

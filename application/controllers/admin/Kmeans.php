@@ -50,6 +50,28 @@ class Kmeans extends CI_Controller {
 		$c2 = $this->input->post('c2');
 		$c3 = $this->input->post('c3');
 
+        $cekc1 = $this->db->where('jumlah', $c1)->get('tbl_ppdb_wilayah')->row();
+        $cekc2 = $this->db->where('jumlah', $c2)->get('tbl_ppdb_wilayah')->row();
+        $cekc3 = $this->db->where('jumlah', $c3)->get('tbl_ppdb_wilayah')->row();
+
+        if(!$cekc1) {
+            $this->m_umum->generatePesan("Gagal update centroid, data c1 tidak sesuai dengan db","gagal");
+
+            redirect('admin/kmeans/daftar_kmeans');
+        }
+
+        if(!$cekc2) {
+            $this->m_umum->generatePesan("Gagal update centroid, data c2 tidak sesuai dengan db","gagal");
+
+            redirect('admin/kmeans/daftar_kmeans');
+        }
+
+        if(!$cekc3) {
+            $this->m_umum->generatePesan("Gagal update centroid, data c3 tidak sesuai dengan db","gagal");
+
+            redirect('admin/kmeans/daftar_kmeans');
+        }
+
 		$data = [
 			'center1' => $c1,
 			'center2' => $c2,
